@@ -13,7 +13,8 @@
         <input type="number" name="num1">
         <select name="op">
             {% for op in op_list %}
-                <option value="{{op}}">{{op}}</option>
+            <!-- loop 계산기 기호를 원하는 기호로 지정해줄수있음 -->
+                <option value="{{op}}"{% if loop.index == 3 %}selected{% endif %}>{{op}}</option>
             
             {% endfor %}
         </select>

@@ -1,0 +1,27 @@
+{% extends "13.bootstrap.html" %}
+{% block title %}Interpark 베스트셀러{% endblock %}
+{% block subtitle %}Interpark 베스트셀러{% endblock %}
+{% block content %}
+
+    <hr>
+    <table border="1"  width="1300" class="table table-bordered table-sm">
+        <tr>
+            <th>순위</th>
+            <th>이미지</th>
+            <th>제목</th>
+            <th>저자</th>
+            <th>출판사</th>
+            <th>가격</th>
+        </tr>
+        {% for book in book_list %}
+        <tr>
+            <td style="text-align: center;">{{book.순위}}</td>
+            <td style="text-align: center;"><img src="{{book.img}}" height="40"></td>
+            <td><a href="{{book.href}}" target="_blank">{{book.제목}}</a></td>
+            <td>{{book.저자}}</td>
+            <td>{{book.출판사}}</td>
+            <td>{{book.가격}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
