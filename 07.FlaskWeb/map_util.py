@@ -2,8 +2,8 @@ import json, folium,requests,os
 from urllib.parse import quote
 import pandas as pd
 def hot_places(places,app):
-
-    with open('../04. 지도시각화/data/roadapikey.txt') as f:
+    #도로명주소 구하기
+    with open('../04.지도시각화/data/roadapikey.txt') as f:
         road_key = f.read()
     base_url = 'https://www.juso.go.kr/addrlink/addrLinkApiJsonp.do'
     params1 = f'confmKey={road_key}&currentPage=1&countPerPage=10&resultType=json'
@@ -20,7 +20,7 @@ def hot_places(places,app):
     df =pd.DataFrame({'place':places,'addr':road_addr_list})
 
     #위도,경도 좌표 구하기
-    with open('../04. 지도시각화/data/kakaoapikey.txt') as f:
+    with open('../04.지도시각화/data/kakaoapikey.txt') as f:
         kakao_key = f.read()
     base_url = 'https://dapi.kakao.com/v2/local/search/address.json'
     header = {'Authorization': f'KakaoAK {kakao_key}'}
