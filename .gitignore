@@ -4,6 +4,7 @@ kakaoapikey.txt
 password.txt
 test.py
 test.ipynb
+upload/
 
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/
