@@ -1,0 +1,128 @@
+{% extends "prototype/1.base.html"%}
+{% block title %}사용자{%endblock%}
+{% block weather %}{{weather | safe()}}{%endblock%}
+{% block additional_head %}
+	<style>
+		/* 프로필 */
+		.image-container {
+		  width: 100%;
+		  height: auto;
+		  overflow: hidden;
+		}
+	
+		.rounded-circle {
+		  float: left;
+		  margin-right: 20px;
+		}
+	
+		.content {
+		  float: left;
+		  margin-left: 20px;
+		}
+	  .carousel-item img {
+		width: 100%;
+		height: auto;
+		margin: 0 auto;
+	  }
+	</style>
+{%endblock%}
+{% block subtitle %}
+<!-- 링크 -->
+<ul class="nav nav-tabs justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link  " href="./my">캠핑</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./my1">여행</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link  " href="./my2">과일</a>
+  </li>
+</ul>
+{%endblock%}
+{% block content %}
+	<!-- 테이블 -->
+	<div class="table-container" style="text-align:center;">
+		<table class="table table-bordered table-sm">
+			<thead>
+				<tr>
+					<th>1월</th>
+					<th>2월</th>
+					<th>3월</th>
+					<th>4월</th>
+					<th>5월</th>
+					<th>6월</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>귤</td>
+					<td>감</td>
+					<td>딸기</td>
+					<td>수박</td>
+					<td>매실</td>
+					<td>자두</td>
+				</tr>
+				<tr>
+					<td>
+						<img src="{{url_for('static',filename='img/귤.jfif')}}" alt="귤" style="height:200px;" width="200px;">
+					</td>
+					<td>
+						<img src="{{url_for('static',filename='img/감.jfif')}}" alt="감" style="height:200px;" width="200px;">
+					</td>
+					<td>
+						<img src="{{url_for('static',filename='img/딸기.jfif')}}" alt="딸기" style="height:200px;" width="200px;">
+					</td>
+					<td>
+						<img src="{{url_for('static',filename='img/수박.jfif')}}" alt="수박" style="height:200px;" width="200px;">
+					</td>
+					<td>
+						<img src="{{url_for('static',filename='img/매실.jpg')}}" alt="매실" style="height:200px;" width="200px;">
+					</td>
+					<td>
+						<img src="{{url_for('static',filename='img/자두.jpg')}}" alt="자두" style="height:200px;" width="200px;">
+					</td>
+				</tr>
+				<tr>
+					<td>7월</td>
+					<td>8월</td>
+					<td>9월</td>
+					<td>10월</td>
+					<td>11월</td>
+					<td> 12월</td>
+				</tr>
+				<tr>
+					</thead>
+			<tbody>
+				<tr>
+					<td>복숭아</td>
+					<td>포도</td>
+					<td>배</td>
+					<td>단감</td>
+					<td>사과</td>
+					<td>키위</td>
+				</tr>
+				<td>
+					<img src="{{url_for('static',filename='img/복숭아.jpg')}}" alt="복숭아" style="height:200px;" width="200px;">
+				</td>
+				<td>
+					<img src="{{url_for('static',filename='img/포도.jpg')}}" alt="포도" style="height:200px;" width="200px;">
+				</td>
+				<td>
+					<img src="{{url_for('static',filename='img/배.jfif')}}" alt="배" style="height:200px;" width="200px;">
+				</td>
+				<td>
+					<img src="{{url_for('static',filename='img/단감.jpg')}}" alt="단감" style="height:200px;" width="200px;">
+				</td>
+				<td>
+					<img src="{{url_for('static',filename='img/사과.jpg')}}" alt="사과" style="height:200px;" width="200px;">
+				</td>
+				<td>
+					<img src="{{url_for('static',filename='img/키위.jpg')}}" alt="키위" style="height:200px;" width="200px;">
+				</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+{%endblock%}

@@ -5,6 +5,7 @@ password.txt
 test.py
 test.ipynb
 upload/
+openweather.txt
 
 # gitignore template for Jupyter Notebooks
 # website: http://jupyter.org/

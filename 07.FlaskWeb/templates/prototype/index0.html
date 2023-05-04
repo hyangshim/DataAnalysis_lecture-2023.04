@@ -1,0 +1,92 @@
+{% extends "prototype/1.base.html"%}
+{% block title %}사용자{%endblock%}
+{% block weather %}{{weather | safe()}}{%endblock%}
+{% block subtitle %}
+<div class="image-container">
+  <img src="{{url_for('static',filename='img/프로필.jpg')}}" class="rounded-circle" alt="Cinque Terre" width="304" height="236">
+<div class="content">
+  <button type="button" class="btn btn-success" data-bs-toggle="collapse" data-bs-target="#demo">클릭(최향심)</button>
+  <div id="demo" class="collapse">
+    <br>
+    저는 캠핑을 다니는것을 좋아하며 특히 캠핑에서 불멍이랑 텐트를 치고나서 먹는 고기를 좋아합니다.<br>
+    여행은 이번 추석연휴에 가는 나트랑에 대한 정보를 정리해 보았습니다. <br>
+    먹는것은 다 좋아하는데요 특히 그중에서 과일을 제일 좋아합니다.<br>
+    그래서 제철 과일을 정리해보았습니다. <br>
+  </div>
+</div>
+</div>
+<ul class="nav nav-tabs justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link " href="./my">캠핑</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="./my1">여행</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link  " href="./my2">과일</a>
+  </li>
+</ul>
+{%endblock%}
+{% block content %}
+  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+  <!-- Carousel -->
+  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+  <!-- Indicators/dots -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+  </div>
+  
+  <!-- The slideshow/carousel -->
+  <div id="demo" class="carousel slide" data-bs-ride="carousel">
+    <!-- Indicators/dots -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+    </div>
+    
+    <!-- The slideshow/carousel -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{url_for('static',filename='img/캠핑3.jpg')}}" alt="Los Angeles" class="d-block" style="width:800px; height:400px">
+        <div class="carousel-caption">
+          <h3>불멍</h3>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static',filename='img/캠핑 1.jpg')}}" alt="Chicago" class="d-block" style="width:800px; height:400px">
+        <div class="carousel-caption">
+          <h3>맛있는 양고기</h3>
+        </div> 
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static',filename='img/캠핑2.jpg')}}" alt="New York" class="d-block" style="width:800px; height:400px">
+        <div class="carousel-caption">
+          <h3>문어구이 뽈뽀</h3>
+        </div>  
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static',filename='img/캠핑4.jpg')}}" alt="New York" class="d-block" style="width:800px; height:400px">
+        <div class="carousel-caption">
+          <h3>바비큐</h3>
+        </div>  
+      </div>
+    </div>
+    
+    <!-- Left and right controls/icons -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "prototype/1.base.html"%}
+{% block title %}지니{%endblock%}
+{% block weather %}{{weather | safe()}}{%endblock%}
+{% block subtitle %}지니 실시간{% endblock %}
+{% block content %}
+
+    <table border="1"  width="1300" class="table table-bordered table-sm">
+        <tr>
+            <th style="width: 6%; text-align: center;">순위</th>
+            <th style="width: 10%; text-align: center;">이미지</th>
+            <th style="width: 10%; text-align: center;">제목</th>
+            <th style="width: 10%; text-align: center;">저자</th>
+            <th style="width: 10%; text-align: center;">출판사</th>
+        </tr>
+        {% for genie in genie_list %}
+        <tr>
+            <td style="text-align: center;">{{genie.rnak}}</td>
+            <td style="text-align: center;"><img src="{{genie.img}}" height="40"></td>
+            <td style="width: 10%; text-align: center;">{{genie.title}}</td>
+            <td style="width: 10%; text-align: center;">{{genie.arist}}</td>
+            <td style="width: 10%; text-align: center;">{{genie.album}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
