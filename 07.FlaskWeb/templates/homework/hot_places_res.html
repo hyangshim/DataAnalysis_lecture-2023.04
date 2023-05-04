@@ -1,0 +1,13 @@
+{% extends "homework/base.html" %}
+{% block title %}수원 Hot Places{% endblock %}
+{% block content %}
+    <div class="row text-center">
+        <h3>수원 Hot Places 결과</h3>
+        <div class="col-2"></div>
+        <div class="col-8 text-center">
+            <iframe src="{{url_for('static', filename='img/hotPlaces.html')}}" frameborder="1" width="800" height="500"></iframe>
+            <button class="btn btn-primary mt-2" onclick="location.href='/hotPlaces'">재실행</button>
+        </div>
+        <div class="col-2"></div>
+    </div>
+{% endblock %}

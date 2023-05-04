@@ -1,0 +1,43 @@
+{% extends "homework/base.html" %}
+{% block title %}Scatter plot{% endblock %}
+{% block additional_head %} 
+    <style>
+        td  {text-align: center;}
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="row text-center">
+        <h3>산점도</h3>
+        <div class="col-3"></div>
+        <div class="col-6">
+            <form action="/scatter" method="post">
+                <table class="table table-borderless">
+                    <tr>
+                        <td style="width: 30%;"><label class="col-form-label">점의 갯수</label></td>
+                        <td style="width: 70%;"><input type="text" name="num" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td><label class="col-form-label">X 평균</label></td>
+                        <td><input type="text" name="mean" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td><label class="col-form-label">X 표준편차</label></td>
+                        <td><input type="text" name="std" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td><label class="col-form-label">Y 최소값</label></td>
+                        <td><input type="text" name="min" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td><label class="col-form-label">Y 최대값</label></td>
+                        <td><input type="text" name="max" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><button type="submit" class="btn btn-primary">확인</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+{% endblock %}

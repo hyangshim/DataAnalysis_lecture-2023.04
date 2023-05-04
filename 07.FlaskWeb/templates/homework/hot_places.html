@@ -1,0 +1,21 @@
+{% extends "homework/base.html" %}
+{% block title %}수원 Hot Places{% endblock %}
+{% block content %}
+    <div class="row text-center">
+        <h3>수원 Hot Places</h3>
+        <div class="col-2"></div>
+        <div class="col-8">
+            <form action="hotPlaces" method="post">
+                <table class="table table-borderless">
+                    <tr>
+                        <td style="width: 30%;"><input type="text" name="place1" class="form-control"></td>
+                        <td style="width: 30%;"><input type="text" name="place2" class="form-control"></td>
+                        <td style="width: 30%;"><input type="text" name="place3" class="form-control"></td>
+                        <td style="width: 10%;"><button type="submit" class="btn btn-primary">제출</button></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="col-2"></div>
+    </div>
+{% endblock %}

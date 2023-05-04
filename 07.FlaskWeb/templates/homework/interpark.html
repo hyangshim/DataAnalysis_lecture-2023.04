@@ -1,0 +1,36 @@
+{% extends "homework/base.html" %}
+{% block title %}인터파크 베스트셀러{% endblock %}
+{% block additional_head %} 
+    <style>
+        th  {text-align: center;}
+    </style>
+{% endblock %}
+{% block content %}
+    <div class="row text-center">
+        <h3>인터파크 베스트셀러</h3>
+        <div class="col-1"></div>
+        <div class="col-10">
+            <table class="table">
+                <tr>
+                    <th style="width: 8%;">순위</th>
+                    <th style="width: 10%;">이미지</th>
+                    <th style="width: 38%;">제목</th>
+                    <th style="width: 22%;">저자</th>
+                    <th style="width: 12%;">출판사</th>
+                    <th style="width: 10%;">가격</th>
+                </tr>
+                {% for book in book_list %}
+                <tr>
+                    <td style="text-align: center;">{{book.순위}}</td>
+                    <td style="text-align: center;"><img src="{{book.img}}" height="40"></td>
+                    <td><a href="{{book.href}}" target="_blank">{{book.제목}}</a></td>
+                    <td>{{book.저자}}</td>
+                    <td>{{book.출판사}}</td>
+                    <td style="text-align: right;" class="pe-2">{{book.가격}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col-1"></div>
+    </div>
+{% endblock %}
