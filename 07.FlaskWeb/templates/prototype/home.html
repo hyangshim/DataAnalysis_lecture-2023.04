@@ -1,9 +1,7 @@
-{% extends "prototype/1.base.html"%}
-{% block title %}Home{%endblock%}
-{% block weather %}{{weather | safe()}}{%endblock%}
-{% block subtitle %}Home{%endblock%}
-{% block content%}
-<div>
-    홈 화면입니다.
-</div>
-{%endblock%}
+{% extends "prototype/base(쌤).html" %}
+{% block title %}Home{% endblock %}
+{% block weather %}{{ weather | safe() }}{% endblock %}
+{% block subtitle %}Home{% endblock %}
+{% block content %} 
+    <img src="{{url_for('static', filename='img/home.jpg')}}" width="100%">
+{% endblock %}

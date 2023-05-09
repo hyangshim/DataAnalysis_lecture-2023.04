@@ -1,0 +1,25 @@
+{% extends "prototype/base(쌤).html" %}
+{% block title %}Crawling{% endblock %}
+{% block weather %}{{ weather | safe() }}{% endblock %}
+{% block subtitle %}식신 추천 맛집{% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <form action="/siksin" method="post">
+                <table class="table table-borderless">
+                    <tr>
+                        <td><label class="col-form-label">검색할 장소:</label></td>
+                        <td><input type="text" name="place" class="form-control"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button type="submit" class="btn btn-primary">확인</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+{% endblock %}

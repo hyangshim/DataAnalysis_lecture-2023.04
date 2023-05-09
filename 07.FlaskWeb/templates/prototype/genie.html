@@ -1,24 +1,28 @@
-{% extends "prototype/1.base.html"%}
-{% block title %}지니{%endblock%}
-{% block weather %}{{weather | safe()}}{%endblock%}
-{% block subtitle %}지니 실시간{% endblock %}
+{% extends "prototype/base(쌤).html" %}
+{% block title %}Crawling{% endblock %}
+{% block weather %}{{ weather | safe() }}{% endblock %}
+{% block additional_head %} 
+    <style>
+        th  {text-align: center;}
+    </style>
+{% endblock %}
+{% block subtitle %}지니차트 Top 50{% endblock %}
 {% block content %}
-
-    <table border="1"  width="1300" class="table table-bordered table-sm">
+    <table class="table" style="margin-bottom: 100px;">
         <tr>
-            <th style="width: 6%; text-align: center;">순위</th>
-            <th style="width: 10%; text-align: center;">이미지</th>
-            <th style="width: 10%; text-align: center;">제목</th>
-            <th style="width: 10%; text-align: center;">저자</th>
-            <th style="width: 10%; text-align: center;">출판사</th>
+            <th style="width: 8%;">순위</th>
+            <th style="width: 10%;">이미지</th>
+            <th style="width: 30%;">제목</th>
+            <th style="width: 26%;">아티스트</th>
+            <th style="width: 26%;">앨범명</th>
         </tr>
-        {% for genie in genie_list %}
+        {% for song in song_list %}
         <tr>
-            <td style="text-align: center;">{{genie.rnak}}</td>
-            <td style="text-align: center;"><img src="{{genie.img}}" height="40"></td>
-            <td style="width: 10%; text-align: center;">{{genie.title}}</td>
-            <td style="width: 10%; text-align: center;">{{genie.arist}}</td>
-            <td style="width: 10%; text-align: center;">{{genie.album}}</td>
+            <td style="text-align: center;">{{song.rank}}</td>
+            <td style="text-align: center;"><img src="{{song.img}}" height="32"></td>
+            <td>{{song.title}}</a></td>
+            <td>{{song.artist}}</td>
+            <td>{{song.album}}</td>
         </tr>
         {% endfor %}
     </table>

@@ -1,0 +1,29 @@
+{% extends "prototype/base(쌤).html" %}
+{% block title %}Crawling{% endblock %}
+{% block weather %}{{ weather | safe() }}{% endblock %}
+{% block additional_head %} 
+    <style>
+        th  {text-align: center;}
+    </style>
+{% endblock %}
+{% block subtitle %}식신 추천 {{place}} 맛집{% endblock %}
+{% block content %}
+    <table class="table" style="margin-bottom: 100px;">
+        <tr>
+            <th style="width: 12%;">이미지</th>
+            <th style="width: 24%;">상호</th>
+            <th style="width: 26%;">메뉴</th>
+            <th style="width: 12%;">평점</th>
+            <th style="width: 26%;">주소</th>
+        </tr>
+        {% for food in food_list %}
+        <tr>
+            <td style="text-align: center;"><img src="{{food.img}}" height="40"></td>
+            <td>{{food.title}}</a></td>
+            <td>{{food.menu}}</td>
+            <td style="text-align: center;">{{food.score}}</td>
+            <td style="text-align: center;">{{food.location}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
