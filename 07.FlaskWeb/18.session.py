@@ -106,22 +106,37 @@ def interpark():
 @app.route('/genie')
 def genie():
     menu={'ho':0,'us':0,'us1':1,'cr':0,'sc':0}
-    song_list = gn.genie()
+    song_list = cu.genie()
     return render_template('prototype/genie.html', song_list=song_list, 
                            menu=menu, weather=get_weather(app), quote=quote, addr=addr)
-
-@app.route('/siksin', methods=['GET', 'POST'])
-def siksin():
+@app.route('/genie_jquery')
+def genie_jquery():
     menu={'ho':0,'us':0,'us1':1,'cr':0,'sc':0}
-    if request.method == 'GET':
-        return render_template('prototype/siksin.html', menu=menu, weather=get_weather(app), 
-                               quote=quote, addr=addr)
-    else:
-        place = request.form['place']
-        food_list = cu.siksin(place)
-        return render_template('prototype/siksin_res.html', food_list=food_list, 
-                               menu=menu, weather=get_weather(app), place=place, 
-                               quote=quote, addr=addr)
+    song_list = cu.genie()
+    return render_template('prototype/genie_jquery.html', song_list=song_list, 
+                           menu=menu, weather=get_weather(app), quote=quote, addr=addr)
+
+# @app.route('/siksin', methods=['GET', 'POST'])
+# def siksin():
+#     menu={'ho':0,'us':0,'us1':1,'cr':0,'sc':0}
+#     if request.method == 'GET':
+#         return render_template('prototype/siksin.html', menu=menu, weather=get_weather(app), 
+#                                quote=quote, addr=addr)
+#     else:
+#         place = request.form['place']
+#         food_list = cu.siksin(place)
+#         return render_template('prototype/siksin_res.html', food_list=food_list, 
+#                                menu=menu, weather=get_weather(app), place=place, 
+#                                quote=quote, addr=addr)
+    
+# @app.route('/siksin')
+# def siksin(place):
+#     menu={'ho':0,'us':0,'us1':1,'cr':0,'sc':0}
+#     food_list = cu.siksin(place)
+#     return render_template('prototype/siksin.html', food_list=food_list, 
+#                             menu=menu, weather=get_weather(app), 
+#                             quote=quote, addr=addr)
+
 
 @app.route('/schedule')
 
