@@ -1,5 +1,6 @@
 // AJAX(Asynchronous Javascript and XML)
 // Web page의 일부분만 변경하는 방법
+
 function changeQuote() {
     $.ajax({
         type: 'GET',
@@ -10,21 +11,32 @@ function changeQuote() {
         }
     });
 }
-function changeAddr() {
-    $('#addrInput').attr('class', 'mt-2');      // input box가 보이게
+let ad = false;
+function changeProfile() {
+    if (!ad) {
+        $('#addrInput').attr('class', 'mt-2'); 
+        ad = !ad;
+    } else {
+        $('#addrInput').attr('class', 'mt-2 d-none');
+        ad = !ad;
+    }
 }
-function addrSubmit() {
-    $('#addrInput').attr('class', 'mt-2 d-none');   // input box가 안보이게
-    let addr = $('#addrInputTag').val();
-    $.ajax({
-        type: 'GET',
-        url: '/change_addr',
-        data: {addr: addr},
-        success: function(msg) {
-            $('#addr').html(msg);
-        }
-    });
-}
+    function changeAddr() {
+        $('#addrInput').attr('class', 'mt-2');      // input box가 보이게
+    }
+    function addrSubmit() {
+        $('#addrInput').attr('class', 'mt-2 d-none');   // input box가 안보이게
+        let addr = $('#addrInputTag').val();
+        $.ajax({
+            type: 'GET',
+            url: '/change_addr',
+            data: {addr: addr},
+            success: function(msg) {
+                $('#addr').html(msg);
+            }
+        });
+    }
+
 function changeWeather() {
     let addr = $('#addr').text();
     $.ajax({
@@ -37,10 +49,18 @@ function changeWeather() {
     });
 }
 
+
+let flag = false;
 function changeProfile() {
-    $('#imageInput').attr('class', 'mt-2');
+    if (!flag) {
+        $('#imageInput').attr('class', 'mt-2'); 
+        flag = !flag;
+    } else {
+        $('#imageInput').attr('class', 'mt-2 d-none');
+        flag = !flag;
+    }
 }
-function imageSubmit() {
+  function imageSubmit() {
     let imageInputVal = $('#image')[0];
     let formData = new FormData();
     formData.append('image', imageInputVal.files[0]);
@@ -56,4 +76,4 @@ function imageSubmit() {
             $('#profile').attr('src', fname);
         }
     });
-}
+  }
