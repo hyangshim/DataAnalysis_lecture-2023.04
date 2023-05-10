@@ -1,4 +1,4 @@
-# Python Lecture (2023.04)
+# Data Analysis Lecture (2023.04)
 
 ### 데이터 분석 강좌
 
