@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>melon</title>
+    <style>
+        th {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="example" class="table" style="margin-bottom: 20px;">
+        <thead>
+            <tr>
+                <th style="width: 8%;">순위</th>
+                <th style="width: 30%;">카테고리</th>
+                <th style="width: 26%;">채널명</th>
+                <th style="width: 26%;">조회수</th>
+                <th style="width: 26%;">비디오</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for youtube in youtube_list %}
+            <tr>
+                <td>{{youtube.순위}}</td>
+                <td>{{youtube.카테고리}}</a></td>
+                <td>{{youtube.채널명}}</td>
+                <td>{{youtube.조회수}}</td>
+                <td>{{youtube.비디오}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
