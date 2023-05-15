@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Ranking</title>
+</head>
+<body style="margin: 40px;">
+    <h3>유튜브 랭킹 Top1000 (구독자수 기준)</h3>
+    <hr>
+    <table border="1">
+        <tr>
+            <th>순위</th>
+            <th>카테고리</th>
+            <th>채널명</th>
+            <th>구독자수</th>
+            <th>조회수</th>
+            <th>비디오수</th>
+        </tr>
+        {% for channel in channel_list %}
+        <tr>
+            <td>{{ channel.순위 }}</td>
+            <td>{{ channel.카테고리 }}</td>
+            <td>{{ channel.채널명 }}</td>
+            <td>{{ channel.구독자수 }}</td>
+            <td>{{ channel.조회수 }}</td>
+            <td>{{ channel.비디오수 }}</td>
+        </tr>
+        {% endfor %}    
+    </table>
+</body>
+</html>
