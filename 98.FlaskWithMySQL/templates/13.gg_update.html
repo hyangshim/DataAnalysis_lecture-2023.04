@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>걸그룹 수정</title>
+    <style>
+        input {margin: 3px; padding: 3px;}
+    </style>
+</head>
+<body style="margin: 40px;">
+    <h3>걸그룹 수정</h3>
+    <hr>
+    <form action="/gg/update/{{group[0]}}" method="post">
+        <input type="text" name="name" value="{{group[1]}}"><br>
+        데뷔일자: <input type="date" name="debut" value="{{group[2]}}"><br>
+        <input type="text" name="hid" value="{{group[3]}}"><br>
+        <input type="submit" value="제출">
+    </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>걸그룹 추가</title>
+    <style>
+        input {margin: 3px; padding: 3px;}
+    </style>
+</head>
+<body style="margin: 40px;">
+    <h3>걸그룹 추가</h3>
+    <hr>
+    <form action="/gg/add" method="post">
+        <input type="text" name="name" placeholder="걸그룹 이름을 입력하세요."><br>
+        데뷔일자: <input type="date" name="debut"><br>
+        <input type="text" name="hid" placeholder="힛트송 아이디를 입력하세요."><br>
+        <input type="submit" value="제출">
+    </form>
+</body>
+</html>
